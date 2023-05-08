@@ -12,8 +12,7 @@ public class ReadTextFile {
     public static void main(String[] args) throws IOException {
         Path dataLocation = null; // what's our data file?
         String fileName = null;
-        // let's get a file name from the user and try to open the associated file
-
+        
         // open the file and read the data
         try {
             Path locationPath = Paths.get(ReadTextFile.class.getResource("/" + "The-Use-of-First-Person-Point-of-View-in-Jane-Eyre.txt").toURI());
