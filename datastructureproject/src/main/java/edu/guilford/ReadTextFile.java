@@ -3,12 +3,13 @@ package edu.guilford;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class ReadTextFile {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Path dataLocation = null; // what's our data file?
         String fileName = null;
         // let's get a file name from the user and try to open the associated file
@@ -38,7 +39,7 @@ public class ReadTextFile {
                     // make the word lowercase
                     word = word.toLowerCase();
                     // add the word to the queue
-                    // queue.enqueue(word);
+                    //queue.enqueue(word);
                 }
                 // read the next line
                 line = bufferedReader.readLine();
@@ -54,9 +55,6 @@ public class ReadTextFile {
             // close the file
             bufferedReader.close();
         } catch (URISyntaxException e) {
-            System.out.println("Error reading file: " + e.getMessage());
-
-        } catch (Exception e) {
             System.out.println("Error reading file: " + e.getMessage());
         }
     }
