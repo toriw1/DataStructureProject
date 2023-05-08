@@ -38,7 +38,7 @@ public class ReadTextFile {
             // let the natural order of the words be alphabetical
             while (line != null) {
                 // split the line into words
-                String[] words = line.split("\\W+");
+                String[] words = line.split("\\W");
                 // for each word in the line
                 for (int i = 0; i < words.length; i++) {
                     String word = words[i];
@@ -47,6 +47,7 @@ public class ReadTextFile {
                         fileSet.add(word.toLowerCase());
                     }
                 }
+                line = bufferedReader.readLine();
             }
                 // print the queue to a file
                 while (!fileQueue.isEmpty()) {
